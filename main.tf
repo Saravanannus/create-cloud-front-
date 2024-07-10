@@ -13,7 +13,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   is_ipv6_enabled     = true
   comment             = "saravanan-Cloudfront"
   default_root_object = "home.html"
-# coefault cache Behavior Block
+  # coefault cache Behavior Block
   default_cache_behavior {
     target_origin_id       = "S3-sctp-staticwebsite-files"
     viewer_protocol_policy = "redirect-to-https"
@@ -27,11 +27,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
         forward = "none"
       }
     }
-   
-       min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
-    compress               = true
+
+    min_ttl     = 0
+    default_ttl = 3600
+    max_ttl     = 86400
+    compress    = true
   }
 
   restrictions {
